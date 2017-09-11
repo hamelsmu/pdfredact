@@ -53,8 +53,9 @@ def redact(mypath, fname):
 
     #Crop Pages
     for page in doc.pages:
-        #Change last parameter to change height at which page gets cropped.
-        page.cropBox = pdf.generic.RectangleObject([0, 0, 612, 715])
+        # Change last parameter to change height at which page gets cropped.
+        # The larger the numbers the less it gets cropped was at 715 before
+        page.cropBox = pdf.generic.RectangleObject([0, 0, 612, 564])
         output.addPage(page)
 
     #Parse Original Bookmark, and Transfer Them To New PDF
